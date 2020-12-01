@@ -1,11 +1,10 @@
 package dk.softbois.reviewcatalog;
-
 import models.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 @RestController
 @RepositoryRestResource
 @ResponseBody
@@ -14,7 +13,7 @@ public class ReviewController {
 
     @Autowired
     private ReviewRepo repo;
-    private Object review;
+    private Object Review;
 
     @GetMapping("/")
     public List<Review> retrieveAllReviews()
