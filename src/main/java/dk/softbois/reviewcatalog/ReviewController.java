@@ -6,7 +6,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
 @RepositoryRestResource
 @ResponseBody
 @RequestMapping("/reviews")
@@ -19,19 +19,22 @@ public class ReviewController {
     @GetMapping("/")
     public List<Review> retrieveAllReviews()
     {
+        System.out.println("hello1");
+
         return repo.findAll();
     }
 
-    @GetMapping("/{username}")
-    public List<Review> findByUsername(@PathVariable String username)
+    @GetMapping("/username/{username}")
+    public List<Review> findAllByUsername(@PathVariable String username)
     {
-        return repo.findByUsername(username);
+        return (List<Review>) repo.findAllByUsername(username);
     }
 
-    @GetMapping("/{carId}")
-    public List<Review> findByUsername(@PathVariable int carId)
+    @GetMapping("/car-id/{carId}")
+    public List<Review> findAllByCarId(@PathVariable int carId)
     {
-        return repo.findByCarId(carId);
+        System.out.println("hello");
+        return (List<Review>) repo.findAllByCarId(carId);
     }
 
     @PostMapping("/")

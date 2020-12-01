@@ -11,6 +11,8 @@ import java.util.List;
 @RepositoryRestResource
 public interface ReviewRepo extends MongoRepository<Review, String> {
 
-    List<Review> findByCarId(int car_id);
-    List<Review> findByUsername(String username);
+    Iterable<Review> findAllByCarId(int carId);
+    Iterable<Review> findAllByUsername(String username);
+    Review findByUsername(String username);
+
 }
