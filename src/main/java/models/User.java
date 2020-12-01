@@ -1,9 +1,6 @@
 package models;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,5 +15,6 @@ public class User {
     @NonNull
     @Indexed(unique = true)
     String username;
+    @Getter
     List<Integer> cars;
 }

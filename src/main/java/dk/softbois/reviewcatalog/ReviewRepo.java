@@ -9,6 +9,5 @@ public interface ReviewRepo extends MongoRepository<Review, String> {
 
     Iterable<Review> findAllByCarId(int carId);
     Iterable<Review> findAllByUsername(String username);
-    Review findByUsername(String username);
 
 }

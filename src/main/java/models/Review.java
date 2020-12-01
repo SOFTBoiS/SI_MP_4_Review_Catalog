@@ -1,9 +1,6 @@
 package models;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -12,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Review {
     String id;
+    @Getter
     @NonNull String username;
     @NonNull int carId;
     @NonNull int rating;

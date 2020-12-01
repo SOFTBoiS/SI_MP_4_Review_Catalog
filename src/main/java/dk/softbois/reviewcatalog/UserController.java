@@ -2,12 +2,12 @@ package dk.softbois.reviewcatalog;
 import models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RepositoryRestResource
-@ResponseBody
 @RequestMapping("/users")
 public class UserController {
 
